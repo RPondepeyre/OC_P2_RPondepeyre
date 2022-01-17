@@ -4,6 +4,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
 /**
  * Analyse une liste de String et stocke le résultat dans une liste d'objets
@@ -11,7 +12,7 @@ import java.util.Collections;
  */
 public class AnalyticsCounter {
 
-	ArrayList<Symptoms> symptomList = new ArrayList<Symptoms>();
+	List<Symptoms> symptomList = new ArrayList<Symptoms>();
 
 	/**
 	 * Constructeur de la classe AnalyticsCounter
@@ -21,10 +22,11 @@ public class AnalyticsCounter {
 	 * @param rawlist Prends en paramètre une liste de String non triée.
 	 * @see Symptoms
 	 */
-	public AnalyticsCounter(ArrayList<String> rawlist) {
+
+	public AnalyticsCounter(List<String> rawlist) {
 		Collections.sort(rawlist); // trie la liste d'entrée par ordre alphabétique
 		rawlist.add("Temporary"); // ligne temporaire à la fin de la liste
-		ArrayList<Symptoms> symptomList = new ArrayList<Symptoms>(); // Déclaration de SymptomList: liste d'objets Symptoms
+		List<Symptoms> symptomList = new ArrayList<Symptoms>(); // Déclaration de SymptomList: liste d'objets Symptoms
 		try{
 			for (int i = 1; i < rawlist.size(); i++) {
 
@@ -48,10 +50,11 @@ public class AnalyticsCounter {
 	 * 
 	 * @throws IOException
 	 */
-	public void ResultGenerator() {
+	
+	public void ResultGenerator(String result) {
 
 		try {
-			FileWriter writer = new FileWriter("result.out"); // ouvre un writer et génère un fichier result.out
+			FileWriter writer = new FileWriter(result); // ouvre un writer et génère un fichier result.out
 			for (int i = 0; i < symptomList.size(); i++) { // boucle sur symptomList
 				writer.write(symptomList.get(i).GetName() + ": " + symptomList.get(i).GetOccurences() + "\n"); // Ecrit à chaque ligne "nom du symptome": "nombre d'occurences"
 			}
@@ -63,7 +66,7 @@ public class AnalyticsCounter {
 		}
 	}
 
-	public ArrayList<Symptoms> GetList() {
+	public List<Symptoms> GetList() {
 		return this.symptomList;
 	}
 

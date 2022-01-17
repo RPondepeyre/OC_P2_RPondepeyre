@@ -1,6 +1,5 @@
 package com.hemebiotech.analytics;
-
-import java.util.ArrayList;
+import java.util.List;
 import java.util.Collections;
 /**
  * Objet définit par son nom et son nombre d'occurences dans une liste
@@ -15,7 +14,7 @@ public class Symptoms {
  * @param name  Entrée de la chaine de caractères String à compter
  * @param rawlist   Entrée de la liste dans laquelle on doit chercher le nombre d'occurences de "name"
  */
-   public Symptoms(String name, ArrayList<String> rawlist){
+   public Symptoms(String name, List<String> rawlist){
         this.name = name;
         this.occurences = Collections.frequency(rawlist, name);  //Compte les occurences de "name" dans "rawlist"
 
