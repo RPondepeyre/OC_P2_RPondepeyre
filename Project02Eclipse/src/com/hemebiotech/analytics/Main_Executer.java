@@ -12,7 +12,7 @@ public class Main_Executer {
        
         //Step1: Lecture du fichier txt et stockage dans une raw list (readsymptomdatafromfile)
         String filepath = "symptoms.txt";          // Variable chemin du fichier txt
-        String resultpath = "result.out";
+        String resultpath = "result.out";          // Variable chemin du fichier resultat
 
         ReadSymptomDataFromFile lecteur = new ReadSymptomDataFromFile(filepath);   // Création d'un objet ReadSymptomDataFromFile grace à son constructeur
         List<String> rawlist = new ArrayList<String>(lecteur.GetSymptoms());     // Appel de la fonction GetSymptoms pour stocker le fichier txt dans une liste
