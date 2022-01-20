@@ -5,8 +5,6 @@ import java.util.List;
 /**
  * Execution principale du programme de tri d'une liste de Symptomes
  * 
- * AJOUTER UNE ABSTRACTION AVEC INTERFACE
- * 
  */
 public class Main_Executer {
     
